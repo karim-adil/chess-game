@@ -7,7 +7,6 @@ export default function ChessPieceSvg({ type, color, size = '100%', className = 
   // Gradient IDs for rich aesthetic styling
   const fillGradientId = isWhite ? 'whitePieceGradient' : 'blackPieceGradient';
   const strokeColor = isWhite ? '#334155' : '#f8fafc';
-  const filterId = isWhite ? 'whiteGlow' : 'blackGlow';
 
   const pieceSVGs = {
     p: (
@@ -57,22 +56,29 @@ export default function ChessPieceSvg({ type, color, size = '100%', className = 
     ),
     k: (
       <g>
-        {/* Royal Crown Top Orb (No Cross) */}
+        {/* Classic Staunton King Crown Top Orb (Replacing Cross) */}
         <circle
           cx="30"
-          cy="11"
-          r="3.5"
+          cy="9"
+          r="3.2"
           fill={`url(#${fillGradientId})`}
           stroke={strokeColor}
           strokeWidth="1.8"
         />
-        {/* Royal Crown Body & Base */}
+        {/* Authentic Staunton King Body & Crown */}
         <path
-          d="M 30,14.5 C 35,17 40,21 40,30 C 40,34 38,37 35,39 L 25,39 C 22,37 20,34 20,30 C 20,21 25,17 30,14.5 Z M 18,42 L 42,42 L 42,40 L 18,40 Z M 14,45 L 46,45 L 46,43 L 14,43 Z"
+          d="M 27,12 L 33,12 L 33,16 C 37,18 41,22 41,30 C 41,34 39,37 36,39 L 24,39 C 21,37 19,34 19,30 C 19,22 23,18 27,16 Z M 18,42 L 42,42 L 42,40 L 18,40 Z M 14,45 L 46,45 L 46,43 L 14,43 Z"
           fill={`url(#${fillGradientId})`}
           stroke={strokeColor}
           strokeWidth="1.8"
           strokeLinejoin="round"
+        />
+        {/* Crown Arch Band (Distinct King Feature) */}
+        <path
+          d="M 24,25 Q 30,22 36,25"
+          fill="none"
+          stroke={strokeColor}
+          strokeWidth="1.5"
         />
       </g>
     )
