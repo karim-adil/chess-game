@@ -56,13 +56,25 @@ export default function ChessPieceSvg({ type, color, size = '100%', className = 
       />
     ),
     k: (
-      <path
-        d="M 27,6 L 33,6 L 33,10 L 37,10 L 37,16 L 33,16 L 33,19 C 37,21 41,25 41,31 C 41,34 39,37 36,39 L 24,39 C 21,37 19,34 19,31 C 19,25 23,21 27,19 L 27,16 L 23,16 L 23,10 L 27,10 Z M 18,42 L 42,42 L 42,40 L 18,40 Z M 14,45 L 46,45 L 46,43 L 14,43 Z"
-        fill={`url(#${fillGradientId})`}
-        stroke={strokeColor}
-        strokeWidth="1.8"
-        strokeLinejoin="round"
-      />
+      <g>
+        {/* Royal Crown Top Orb (No Cross) */}
+        <circle
+          cx="30"
+          cy="11"
+          r="3.5"
+          fill={`url(#${fillGradientId})`}
+          stroke={strokeColor}
+          strokeWidth="1.8"
+        />
+        {/* Royal Crown Body & Base */}
+        <path
+          d="M 30,14.5 C 35,17 40,21 40,30 C 40,34 38,37 35,39 L 25,39 C 22,37 20,34 20,30 C 20,21 25,17 30,14.5 Z M 18,42 L 42,42 L 42,40 L 18,40 Z M 14,45 L 46,45 L 46,43 L 14,43 Z"
+          fill={`url(#${fillGradientId})`}
+          stroke={strokeColor}
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+      </g>
     )
   };
 
